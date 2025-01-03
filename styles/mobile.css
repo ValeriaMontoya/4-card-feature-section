@@ -8,48 +8,55 @@
   --very-light-gray: hsl(0, 0%, 98%);
 
   --primary-font-family: "Poppins", sans-serif;
-  --font-size-small: 1.3rem;
-  --font-size-medium: 1.5rem;
-  --font-size-large: 2.4rem;
+  --font-size-small: 0.8125rem;
+  --font-size-medium: 0.9375rem;
+  --font-size-large: 1.5rem;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   font-family: var(--primary-font-family);
-  font-size: var(--font-size-medium);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--very-light-gray);
 }
 
 .header {
   text-align: center;
-  padding: 8rem 3.2rem 0;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 5.3125rem 2rem 0;
+  max-width: 460px;
 }
 
 .header__h1 {
-  font-weight: 200;
+  font-weight: 300;
   font-size: var(--font-size-large);
   color: var(--very-dark-blue);
+  letter-spacing: 0.167px;
 }
 
 .header__h2 {
   font-size: var(--font-size-large);
   color: var(--very-dark-blue);
+  letter-spacing: 0.167px;
+  font-weight: 600;
+  margin-block-end: 12px;
 }
 
 .header__p {
   color: var(--grayish-blue);
-  margin: 16px 0;
+  font-size: var(--font-size-medium);
+  line-height: 25px;
+  letter-spacing: 0.104px;
 }
 
 .cards {
@@ -57,35 +64,40 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 6rem 3.2rem;
+  margin: 4.75rem 2rem;
 }
 
 .card {
+  background-color: white;
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0px 15px 30px -11px var(--very-dark-blue);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  min-width: 200px;
   max-width: 340px;
-  padding: 24px;
-  border-radius: 6px 6px 8px 8px;
-  background-color: white;
-  box-shadow: 0px 15px 20px -6px hsl(218deg 43% 46% / 20%);
 }
 
 .card__title {
   color: var(--very-dark-blue);
-  font-size: 2rem;
-  align-self: flex-start;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .card__p {
   color: var(--grayish-blue);
   font-size: var(--font-size-small);
-  line-height: 2.4rem;
+  line-height: 1.4375rem;
+  letter-spacing: 0.09px;
+}
+
+.image__container {
+  align-self: flex-end;
+  height: 90px;
 }
 
 .card__icon {
-  margin-top: 32px;
+  margin-block-start: 32px;
+  width: 57px;
 }
 
 .card:first-of-type {
@@ -107,6 +119,8 @@ body {
 .attribution {
   font-size: var(--font-size-small);
   text-align: center;
+  margin-inline: 32px;
+  margin-block-end: 32px;
 }
 
 .attribution a {
